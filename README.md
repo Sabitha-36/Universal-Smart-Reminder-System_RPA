@@ -19,11 +19,11 @@ The system uses Microsoft Excel to store task details and reminder history, whil
 
 🛠️ Technologies Used
 
- UiPath Studio – Workflow automation
- UiPath Forms – User interaction and dashboard
- Microsoft Excel – Task storage and reminder logs
- Email Activities – Automated notifications
- Microsoft Word – Report generation, if configured
+ 1. UiPath Studio – Workflow automation
+ 2. UiPath Forms – User interaction and dashboard
+ 3. Microsoft Excel – Task storage and reminder logs
+ 4. Email Activities – Automated notifications
+ 5. Microsoft Word – Report generation, if configured
 
 📂 Main Modules
 
