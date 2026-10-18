@@ -1,0 +1,170 @@
+﻿{
+  "Metadata": {
+    "Id": "c318c07d-6238-46a6-bc25-24b832b64321",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "form2",
+    "Theme": "Default",
+    "ShowInTaskbar": true,
+    "ShowMargin": true,
+    "CustomStyle": ""
+  },
+  "Data": {
+    "components": [
+      {
+        "label": "ReminderID",
+        "tableView": false,
+        "delimiter": false,
+        "requireDecimal": false,
+        "truncateMultipleSpaces": false,
+        "key": "reminderId",
+        "type": "number",
+        "input": true
+      },
+      {
+        "label": "ReminderName",
+        "tableView": true,
+        "key": "reminderName",
+        "type": "textfield",
+        "input": true
+      },
+      {
+        "label": "ReminderTime",
+        "tableView": true,
+        "key": "reminderTime",
+        "type": "time",
+        "input": true,
+        "inputMask": "99:99"
+      },
+      {
+        "label": "Frequency",
+        "optionsLabelPosition": "right",
+        "inline": false,
+        "tableView": false,
+        "values": [
+          {
+            "label": "Once",
+            "value": "once",
+            "shortcut": ""
+          },
+          {
+            "label": "Twice",
+            "value": "daily",
+            "shortcut": ""
+          },
+          {
+            "label": "Weekly",
+            "value": "weekly",
+            "shortcut": ""
+          }
+        ],
+        "key": "frequency",
+        "type": "radio",
+        "input": true
+      },
+      {
+        "label": "StartDate",
+        "tableView": false,
+        "datePicker": {
+          "disableWeekends": false,
+          "disableWeekdays": false
+        },
+        "enableMinDateInput": false,
+        "enableMaxDateInput": false,
+        "key": "startDate",
+        "type": "datetime",
+        "input": true,
+        "widget": {
+          "type": "calendar",
+          "displayInTimezone": "viewer",
+          "locale": "en",
+          "useLocaleSettings": false,
+          "allowInput": true,
+          "mode": "single",
+          "enableTime": true,
+          "noCalendar": false,
+          "format": "yyyy-MM-dd hh:mm a",
+          "hourIncrement": 1,
+          "minuteIncrement": 1,
+          "time_24hr": false,
+          "minDate": null,
+          "disableWeekends": false,
+          "disableWeekdays": false,
+          "maxDate": null
+        }
+      },
+      {
+        "label": "EndDate",
+        "tableView": false,
+        "datePicker": {
+          "disableWeekends": false,
+          "disableWeekdays": false
+        },
+        "enableMinDateInput": false,
+        "enableMaxDateInput": false,
+        "key": "endDate",
+        "type": "datetime",
+        "input": true,
+        "widget": {
+          "type": "calendar",
+          "displayInTimezone": "viewer",
+          "locale": "en",
+          "useLocaleSettings": false,
+          "allowInput": true,
+          "mode": "single",
+          "enableTime": true,
+          "noCalendar": false,
+          "format": "yyyy-MM-dd hh:mm a",
+          "hourIncrement": 1,
+          "minuteIncrement": 1,
+          "time_24hr": false,
+          "minDate": null,
+          "disableWeekends": false,
+          "disableWeekdays": false,
+          "maxDate": null
+        }
+      },
+      {
+        "label": "Status",
+        "widget": "choicesjs",
+        "tableView": true,
+        "data": {
+          "values": [
+            {
+              "label": "Pending",
+              "value": "pending"
+            },
+            {
+              "label": "Completed",
+              "value": "completed"
+            },
+            {
+              "label": "Process",
+              "value": "process"
+            }
+          ]
+        },
+        "key": "status",
+        "type": "select",
+        "input": true,
+        "defaultValue": "pending"
+      },
+      {
+        "label": "Description",
+        "tableView": true,
+        "key": "description",
+        "type": "textarea",
+        "input": true
+      },
+      {
+        "type": "button",
+        "label": "Submit",
+        "key": "submit",
+        "disableOnInvalid": true,
+        "input": true,
+        "tableView": false
+      }
+    ]
+  }
+}

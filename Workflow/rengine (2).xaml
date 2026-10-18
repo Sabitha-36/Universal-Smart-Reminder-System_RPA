@@ -1,0 +1,487 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ReminderEngine" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ReminderEngine_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ugage="clr-namespace:UiPath.GSuite.Activities.Gmail.Enums;assembly=UiPath.GSuite.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.GSuite.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.GSuite.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ReminderEngine" sap:VirtualizedContainerService.HintSize="811,8462" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="newReminderTable" />
+      <Variable x:TypeArguments="sd:DataTable" Name="reminderLogTable" />
+      <Variable x:TypeArguments="x:Int32" Name="daysRemaining" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="524,620" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="C:\Users\acer\Desktop\ssdetails.xlsx">
+      <ueab:ExcelApplicationCard.Body>
+        <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,391" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="sd:DataTable" Name="taskDt" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;DailyReminders&quot;)]" ReadFormatting="Default" SaveTo="[dt]" />
+            <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="416,161" sap2010:WorkflowViewState.IdRef="ReadRangeX_2" Range="[Excel.Sheet(&quot;ReminderLog&quot;)]" SaveTo="[reminderLogTable]" />
+          </Sequence>
+        </ActivityAction>
+      </ueab:ExcelApplicationCard.Body>
+    </ueab:ExcelApplicationCard>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="524,123" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;ReminderLog rows = &quot; + reminderLogTable.Rows.Count.ToString +&#xD;&#xA;Environment.NewLine +&#xD;&#xA;&quot;ReminderLog columns = &quot; + reminderLogTable.Columns.Count.ToString]" />
+    <ui:BuildDataTable DataTable="[newReminderTable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="524,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;TaskID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TaskName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ReminderType&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SentDate&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SentTime&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName /&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="524,6988" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="522,6806" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="reminderType" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="488,123" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;TaskID: &quot; + row(&quot;TaskID&quot;).ToString() + Environment.NewLine + &quot;TaskName: &quot; + row(&quot;TaskName&quot;).ToString() + Environment.NewLine + &quot;EndDate: &quot; + row(&quot;EndDate&quot;).ToString()]" />
+            <Assign sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[daysRemaining]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32" xml:space="preserve">[DateTime.ParseExact(
+    row("EndDate").ToString.Trim,
+    "M/d/yyyy",
+    System.Globalization.CultureInfo.InvariantCulture
+).Date.Subtract(Today.Date).Days]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Switch x:TypeArguments="x:Int32" DisplayName="Switch" Expression="[daysRemaining]" sap:VirtualizedContainerService.HintSize="488,6448" sap2010:WorkflowViewState.IdRef="Switch`1_3">
+              <Switch.Default>
+                <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="486,90" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </Switch.Default>
+              <Sequence x:Key="7" DisplayName="Case" sap:VirtualizedContainerService.HintSize="486,1225" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_17">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[reminderType]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">["7-Day Reminder"]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <If Condition="[reminderType &lt;&gt; &quot;&quot; AndAlso&#xA;reminderLogTable.Select(&#xA;    &quot;TaskID = '&quot; + row(&quot;TaskID&quot;).ToString.Replace(&quot;'&quot;, &quot;''&quot;) +&#xA;    &quot;' AND ReminderType = '&quot; + reminderType.Replace(&quot;'&quot;, &quot;''&quot;) + &quot;'&quot;&#xA;).Length = 0]" sap:VirtualizedContainerService.HintSize="452,990" sap2010:WorkflowViewState.IdRef="If_16">
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,770" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="UseExisting" AuthScopesInvalid="False" Body="[&quot;Hello,&quot; + Environment.NewLine + Environment.NewLine +&quot;Your &quot; + row(&quot;TaskName&quot;).ToString +&quot; is due on &quot; + row(&quot;Deadline&quot;).ToString + &quot;.&quot; +Environment.NewLine + Environment.NewLine +&quot;You have &quot; + daysRemaining.ToString +&quot; days remaining.&quot; +Environment.NewLine + Environment.NewLine +&quot;Priority: &quot; + row(&quot;Priority&quot;).ToString +Environment.NewLine + Environment.NewLine +&quot;Please plan your work accordingly.&quot; +Environment.NewLine + Environment.NewLine +&quot;Universal Smart Reminder System&quot;]" ConnectionId="37b6c042-fe3e-4e0e-b343-d2411d52edf4" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="416,498" sap2010:WorkflowViewState.IdRef="SendEmailConnections_23" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="[&quot;Reminder: &quot; + row(&quot;TaskName&quot;).ToString + &quot; is due in 7 days&quot;]" To="[New String(){&quot;sabithav427@gmail.com&quot;}]" UseConnectionService="True">
+                        <uga:SendEmailConnections.Attachments>
+                          <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)" />
+                        </uga:SendEmailConnections.Attachments>
+                        <uga:SendEmailConnections.AttachmentsBackup>
+                          <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="UseExisting">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="ugage:AttachmentInputMode, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </uga:SendEmailConnections.AttachmentsBackup>
+                        <uga:SendEmailConnections.InputTypeBackup>
+                          <usau:BackupSlot x:TypeArguments="ugage:BodyInputType" StoredValue="HTML">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="ugage:BodyInputType, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </uga:SendEmailConnections.InputTypeBackup>
+                      </uga:SendEmailConnections>
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{    row(&quot;TaskID&quot;).ToString, row(&quot;TaskName&quot;).ToString,reminderType, Today.ToString(&quot;dd/MM/yyyy&quot;),   Now.ToString(&quot;hh:mm tt&quot;)}]" DataTable="[newReminderTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="416,212" sap2010:WorkflowViewState.IdRef="AddDataRow_17" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+              <Sequence x:Key="5" DisplayName="Case" sap:VirtualizedContainerService.HintSize="486,1210" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_18">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[reminderType]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">["5-Day Reminder"]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <If Condition="[reminderType &lt;&gt; &quot;&quot; AndAlso&#xA;reminderLogTable.Select(&#xA;    &quot;TaskID = '&quot; + row(&quot;TaskID&quot;).ToString.Replace(&quot;'&quot;, &quot;''&quot;) +&#xA;    &quot;' AND ReminderType = '&quot; + reminderType.Replace(&quot;'&quot;, &quot;''&quot;) + &quot;'&quot;&#xA;).Length = 0]" sap:VirtualizedContainerService.HintSize="452,975" sap2010:WorkflowViewState.IdRef="If_17">
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,755" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="UseExisting" AuthScopesInvalid="False" Body="[&quot;Hello,&quot; + Environment.NewLine + Environment.NewLine +&quot;Your &quot; +row(&quot;TaskName&quot;).ToString +&quot; is due on &quot; +row(&quot;Deadline&quot;).ToString +&quot;.&quot; + Environment.NewLine + Environment.NewLine +&quot;You have only 5 days remaining.&quot; + Environment.NewLine +&quot;Please plan your work accordingly.&quot; + Environment.NewLine + Environment.NewLine +&quot;Universal Smart Reminder System&quot;]" ConnectionId="37b6c042-fe3e-4e0e-b343-d2411d52edf4" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="416,483" sap2010:WorkflowViewState.IdRef="SendEmailConnections_24" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="[&quot;Reminder: &quot; + row(&quot;TaskName&quot;).ToString + &quot; is due in 5 days&quot;]" To="[New String(){&quot;sabithav427@gmail.com&quot;}]" UseConnectionService="True">
+                        <uga:SendEmailConnections.Attachments>
+                          <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)" />
+                        </uga:SendEmailConnections.Attachments>
+                        <uga:SendEmailConnections.AttachmentsBackup>
+                          <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="UseExisting">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="ugage:AttachmentInputMode, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </uga:SendEmailConnections.AttachmentsBackup>
+                        <uga:SendEmailConnections.InputTypeBackup>
+                          <usau:BackupSlot x:TypeArguments="ugage:BodyInputType" StoredValue="HTML">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="ugage:BodyInputType, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </uga:SendEmailConnections.InputTypeBackup>
+                      </uga:SendEmailConnections>
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{    row(&quot;TaskID&quot;).ToString, row(&quot;TaskName&quot;).ToString,reminderType, Today.ToString(&quot;dd/MM/yyyy&quot;),   Now.ToString(&quot;hh:mm tt&quot;)}]" DataTable="[newReminderTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="416,212" sap2010:WorkflowViewState.IdRef="AddDataRow_18" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+              <Sequence x:Key="3" DisplayName="Case" sap:VirtualizedContainerService.HintSize="486,1241" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_19">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[reminderType]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">["3-Day Reminder"]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <If Condition="[reminderType &lt;&gt; &quot;&quot; AndAlso&#xA;reminderLogTable.Select(&#xA;    &quot;TaskID = '&quot; + row(&quot;TaskID&quot;).ToString.Replace(&quot;'&quot;, &quot;''&quot;) +&#xA;    &quot;' AND ReminderType = '&quot; + reminderType.Replace(&quot;'&quot;, &quot;''&quot;) + &quot;'&quot;&#xA;).Length = 0]" sap:VirtualizedContainerService.HintSize="452,1006" sap2010:WorkflowViewState.IdRef="If_15">
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,786" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="UseExisting" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;&amp;quot;Hello, &amp;quot; + Environment.NewLine + Environment.NewLine +&#xA;&amp;quot;This is a reminder for: &amp;quot; + taskName + Environment.NewLine +&#xA;&amp;quot;Reminder Type: &amp;quot; + reminderType + Environment.NewLine +&#xA;&amp;quot;Due Date: &amp;quot; + EndDate.ToString(&amp;quot;dd-MM-yyyy&amp;quot;)&lt;/SPAN&gt;&lt;/P&gt;&quot;)]" ConnectionId="37b6c042-fe3e-4e0e-b343-d2411d52edf4" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="416,514" sap2010:WorkflowViewState.IdRef="SendEmailConnections_25" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="[&quot;Reminder: &quot; + row(&quot;TaskName&quot;).ToString + &quot; is due in 3 days&quot;]" To="[New String(){&quot;sabithav427@gmail.com&quot;}]" UseConnectionService="True">
+                        <uga:SendEmailConnections.Attachments>
+                          <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)" />
+                        </uga:SendEmailConnections.Attachments>
+                        <uga:SendEmailConnections.AttachmentsBackup>
+                          <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="UseExisting">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="ugage:AttachmentInputMode, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </uga:SendEmailConnections.AttachmentsBackup>
+                        <uga:SendEmailConnections.InputTypeBackup>
+                          <usau:BackupSlot x:TypeArguments="ugage:BodyInputType" StoredValue="HTML">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="ugage:BodyInputType, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </uga:SendEmailConnections.InputTypeBackup>
+                      </uga:SendEmailConnections>
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{    row(&quot;TaskID&quot;).ToString, row(&quot;TaskName&quot;).ToString,reminderType, Today.ToString(&quot;dd/MM/yyyy&quot;),   Now.ToString(&quot;hh:mm tt&quot;)}]" DataTable="[newReminderTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="416,212" sap2010:WorkflowViewState.IdRef="AddDataRow_19" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+              <Sequence x:Key="1" DisplayName="Case" sap:VirtualizedContainerService.HintSize="486,1241" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_20">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[reminderType]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">["1-Day Reminder"]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <If Condition="[reminderType &lt;&gt; &quot;&quot; AndAlso&#xA;reminderLogTable.Select(&#xA;    &quot;TaskID = '&quot; + row(&quot;TaskID&quot;).ToString.Replace(&quot;'&quot;, &quot;''&quot;) +&#xA;    &quot;' AND ReminderType = '&quot; + reminderType.Replace(&quot;'&quot;, &quot;''&quot;) + &quot;'&quot;&#xA;).Length = 0]" sap:VirtualizedContainerService.HintSize="452,1006" sap2010:WorkflowViewState.IdRef="If_13">
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,786" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="UseExisting" AuthScopesInvalid="False" Body="[&quot;Hello,&quot; + Environment.NewLine + Environment.NewLine +&quot;URGENT REMINDER!&quot; + Environment.NewLine + Environment.NewLine +&quot;Your &quot; +row(&quot;TaskName&quot;).ToString +&quot; is due tomorrow (&quot; +row(&quot;Deadline&quot;).ToString +&quot;).&quot; + Environment.NewLine + Environment.NewLine +&quot;Please make sure you complete and submit your work before the deadline.&quot; + Environment.NewLine + Environment.NewLine +&quot;Universal Smart Reminder System&quot;]" ConnectionId="37b6c042-fe3e-4e0e-b343-d2411d52edf4" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="416,514" sap2010:WorkflowViewState.IdRef="SendEmailConnections_22" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="[&quot;URGENT: &quot; + row(&quot;TaskName&quot;).ToString + &quot; is due tomorrow&quot;]" To="[New String(){&quot;sabithav427@gmail.com&quot;}]" UseConnectionService="True">
+                        <uga:SendEmailConnections.Attachments>
+                          <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)" />
+                        </uga:SendEmailConnections.Attachments>
+                        <uga:SendEmailConnections.AttachmentsBackup>
+                          <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="UseExisting">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="ugage:AttachmentInputMode, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </uga:SendEmailConnections.AttachmentsBackup>
+                        <uga:SendEmailConnections.InputTypeBackup>
+                          <usau:BackupSlot x:TypeArguments="ugage:BodyInputType" StoredValue="HTML">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="ugage:BodyInputType, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </uga:SendEmailConnections.InputTypeBackup>
+                      </uga:SendEmailConnections>
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{    row(&quot;TaskID&quot;).ToString, row(&quot;TaskName&quot;).ToString,reminderType, Today.ToString(&quot;dd/MM/yyyy&quot;),   Now.ToString(&quot;hh:mm tt&quot;)}]" DataTable="[newReminderTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="416,212" sap2010:WorkflowViewState.IdRef="AddDataRow_16" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+              <Sequence x:Key="0" DisplayName="Case" sap:VirtualizedContainerService.HintSize="486,1241" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_21">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[reminderType]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">["Due Today"]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <If Condition="[reminderType &lt;&gt; &quot;&quot; AndAlso&#xA;reminderLogTable.Select(&#xA;    &quot;TaskID= '&quot; + row(&quot;TaskID&quot;).ToString.Replace(&quot;'&quot;, &quot;''&quot;) +&#xA;    &quot;' AND ReminderType = '&quot; + reminderType.Replace(&quot;'&quot;, &quot;''&quot;) + &quot;'&quot;&#xA;).Length = 0]" sap:VirtualizedContainerService.HintSize="452,1006" sap2010:WorkflowViewState.IdRef="If_14">
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,786" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="UseExisting" AuthScopesInvalid="False" Body="[&quot;Hello,&quot; + Environment.NewLine + Environment.NewLine +&quot;URGENT REMINDER!&quot; + Environment.NewLine + Environment.NewLine +&quot;Your &quot; +row(&quot;TaskName&quot;).ToString +&quot; is due TODAY.&quot; + Environment.NewLine + Environment.NewLine +&quot;Please complete and submit your work before the deadline.&quot; + Environment.NewLine + Environment.NewLine +&quot;Universal Smart Reminder System&quot;]" ConnectionId="37b6c042-fe3e-4e0e-b343-d2411d52edf4" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="416,514" sap2010:WorkflowViewState.IdRef="SendEmailConnections_26" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="[&quot;URGENT: &quot; + row(&quot;TaskName&quot;).ToString + &quot; is due TODAY&quot;]" To="[New String(){&quot;sabithav427@gmail.com&quot;}]" UseConnectionService="True">
+                        <uga:SendEmailConnections.Attachments>
+                          <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)" />
+                        </uga:SendEmailConnections.Attachments>
+                        <uga:SendEmailConnections.AttachmentsBackup>
+                          <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="UseExisting">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="ugage:AttachmentInputMode, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </uga:SendEmailConnections.AttachmentsBackup>
+                        <uga:SendEmailConnections.InputTypeBackup>
+                          <usau:BackupSlot x:TypeArguments="ugage:BodyInputType" StoredValue="HTML">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="ugage:BodyInputType, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </uga:SendEmailConnections.InputTypeBackup>
+                      </uga:SendEmailConnections>
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{    row(&quot;TaskID&quot;).ToString, row(&quot;TaskName&quot;).ToString,reminderType, Today.ToString(&quot;dd/MM/yyyy&quot;),   Now.ToString(&quot;hh:mm tt&quot;)}]" DataTable="[newReminderTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="416,212" sap2010:WorkflowViewState.IdRef="AddDataRow_20" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+            </Switch>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+    <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="524,502" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_5" ResizeWindow="None" WorkbookPath="C:\Users\acer\Desktop\ssdetails.xlsx">
+      <ueab:ExcelApplicationCard.Body>
+        <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,273" sap2010:WorkflowViewState.IdRef="Sequence_63">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="sd:DataTable" Name="newTaskTable" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ueab:WriteRangeX Append="True" Destination="[Excel.Sheet(&quot;ReminderLog&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,213" sap2010:WorkflowViewState.IdRef="WriteRangeX_5" IgnoreEmptySource="False" Source="[newReminderTable]" />
+          </Sequence>
+        </ActivityAction>
+      </ueab:ExcelApplicationCard.Body>
+    </ueab:ExcelApplicationCard>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="524,114" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Reminder Engine worked successfully and email sent according to the deadline" />
+  </Sequence>
+</Activity>
